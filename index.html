@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل طلاب العلوم الشرعية</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="card">
+            <h1 class="form-title">تسجيل بيانات دارسي العلوم الشرعية</h1>
+            
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+            
+            <form id="registrationForm" class="registration-form">
+                <!-- البيانات الشخصية -->
+                <div class="form-section">
+                    <h2>البيانات الشخصية</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="governorate">المحافظة</label>
+                            <select name="governorate" id="governorate" required>
+                                <option value="">اختر المحافظة</option>
+                                <option value="القاهرة">القاهرة</option>
+                                <option value="الجيزة">الجيزة</option>
+                                <option value="الإسكندرية">الإسكندرية</option>
+                                <option value="الدقهلية">الدقهلية</option>
+                                <option value="البحر الأحمر">البحر الأحمر</option>
+                                <option value="البحيرة">البحيرة</option>
+                                <option value="الفيوم">الفيوم</option>
+                                <option value="الغربية">الغربية</option>
+                                <option value="الإسماعيلية">الإسماعيلية</option>
+                                <option value="المنوفية">المنوفية</option>
+                                <option value="المنيا">المنيا</option>
+                                <option value="القليوبية">القليوبية</option>
+                                <option value="الوادي الجديد">الوادي الجديد</option>
+                                <option value="السويس">السويس</option>
+                                <option value="أسوان">أسوان</option>
+                                <option value="أسيوط">أسيوط</option>
+                                <option value="بني سويف">بني سويف</option>
+                                <option value="بورسعيد">بورسعيد</option>
+                                <option value="دمياط">دمياط</option>
+                                <option value="الشرقية">الشرقية</option>
+                                <option value="جنوب سيناء">جنوب سيناء</option>
+                                <option value="كفر الشيخ">كفر الشيخ</option>
+                                <option value="مطروح">مطروح</option>
+                                <option value="الأقصر">الأقصر</option>
+                                <option value="قنا">قنا</option>
+                                <option value="شمال سيناء">شمال سيناء</option>
+                                <option value="سوهاج">سوهاج</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="fullName">الاسم رباعي</label>
+                            <input type="text" name="fullName" id="fullName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="passportNumber">رقم جواز السفر</label>
+                            <input type="text" name="passportNumber" id="passportNumber" required>
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="whatsappNumber">رقم الواتس</label>
+                            <input type="text" name="whatsappNumber" id="whatsappNumber" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="gender">النوع</label>
+                            <select name="gender" id="gender" required>
+                                <option value="">اختر النوع</option>
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="age">السن</label>
+                            <input type="number" name="age" id="age" min="10" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="residence">محل الإقامة</label>
+                            <input type="text" name="residence" id="residence" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- البيانات التعليمية -->
+                <div class="form-section">
+                    <h2>البيانات التعليمية</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="qualification">المؤهل الدراسي</label>
+                            <input type="text" name="qualification" id="qualification" required>
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="educationType">نوع التعليم</label>
+                            <select name="educationType" id="educationType" required>
+                                <option value="">اختر نوع التعليم</option>
+                                <option value="general">عام</option>
+                                <option value="azhar">أزهري</option>
+                                <option value="other">أخرى</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="job">الوظيفة (إن وجدت)</label>
+                            <input type="text" name="job" id="job">
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="academicYear">السنة الدراسية (خاص بالطلاب)</label>
+                            <input type="text" name="academicYear" id="academicYear">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- بيانات التسجيل -->
+                <div class="form-section">
+                    <h2>بيانات التسجيل</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="referenceNumber">الرقم المرجعي</label>
+                            <input type="text" name="referenceNumber" id="referenceNumber" required placeholder="أدخل الرقم المرجعي الخاص بك">
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="level">المرحلة المتقدم لها</label>
+                            <select name="level" id="levelSelect" required>
+                                <option value="">اختر المرحلة</option>
+                                <option value="preparatory">تمهيدية</option>
+                                <option value="intermediate">متوسطة</option>
+                                <option value="specialized">تخصصية</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col" id="specializationDiv" style="display: none;">
+                            <label for="specialization">التخصص</label>
+                            <select name="specialization" id="specialization">
+                                <option value="">اختر التخصص</option>
+                                <option value="fiqh">فقه</option>
+                                <option value="arabic">لغة عربية</option>
+                                <option value="creed">العقيدة</option>
+                                <option value="tafsir_hadith">تفسير وحديث</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="school">المذهب</label>
+                            <select name="school" id="school" required>
+                                <option value="">اختر المذهب</option>
+                                <option value="maliki">مالكي</option>
+                                <option value="hanafi">حنفي</option>
+                                <option value="shafii">شافعي</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="attendanceSystem">نظام الحضور</label>
+                            <select name="attendanceSystem" id="attendanceSystem" required>
+                                <option value="">اختر نظام الحضور</option>
+                                <option value="inPerson">مباشر</option>
+                                <option value="remote">عن بعد</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-col">
+                            <label for="specialNeeds">من ذوي الهمم</label>
+                            <select name="specialNeeds" id="specialNeeds" required>
+                                <option value="">اختر</option>
+                                <option value="yes">نعم</option>
+                                <option value="no">لا</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- المستندات -->
+                <div class="form-section">
+                    <h2>المستندات المطلوبة</h2>
+                    
+                    <div class="form-group">
+                        <label for="idCardImage">صورة البطاقة (وجه وظهر)</label>
+                        <input type="file" name="idCardImage" id="idCardImage" required accept="image/*" data-preview="idCardPreview">
+                        <div id="idCardPreview" class="preview-container hidden">
+                            <p class="preview-label">معاينة الصورة:</p>
+                            <img src="" alt="معاينة صورة البطاقة">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="qualificationImage">
+                            صورة المؤهل
+                            <span class="note">(مطلوب فقط للمرحلة المتوسطة والتخصصية)</span>
+                        </label>
+                        <input type="file" name="qualificationImage" id="qualificationImage" accept="image/*" data-preview="qualificationPreview">
+                        <div id="qualificationPreview" class="preview-container hidden">
+                            <p class="preview-label">معاينة الصورة:</p>
+                            <img src="" alt="معاينة صورة المؤهل">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentReceiptImage">صورة إيصال الدفع</label>
+                        <input type="file" name="paymentReceiptImage" id="paymentReceiptImage" required accept="image/*" data-preview="paymentReceiptPreview">
+                        <div id="paymentReceiptPreview" class="preview-container hidden">
+                            <p class="preview-label">معاينة الصورة:</p>
+                            <img src="" alt="معاينة صورة إيصال الدفع">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-20">
+                    <button type="submit" id="submitButton" class="btn btn-success">تسجيل البيانات</button>
+                </div>
+            </form>
+            
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h2>تم التسجيل بنجاح!</h2>
+                <p>الرقم المرجعي الخاص بك: <strong id="referenceNumber"></strong></p>
+                <p class="mt-20">يرجى الاحتفاظ بهذا الرقم للرجوع إليه في المستقبل.</p>
+                <div class="text-center mt-20">
+                    <button onclick="resetForm()" class="btn">تسجيل طالب جديد</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
